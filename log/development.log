@@ -761,3 +761,177 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-01 14:10:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/railties-4.2.11/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 16ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/edit" for 127.0.0.1 at 2018-12-01 14:10:11 -0500
+
+ActionController::RoutingError (No route matches [GET] "/edit"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /home/manny/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/webrick/httpserver.rb:140:in `service'
+  /home/manny/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/webrick/httpserver.rb:96:in `run'
+  /home/manny/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.4ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-12-01 14:11:00 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+     5:   <%= f.text_field :title %><br>
+     6: 
+     7:   <label>Post Description</label><br>
+     8:   <%= text_area :description %><br>
+     9:   
+    10:   <%= f.submit %>
+    11: <% end %>
+  app/views/posts/edit.html.erb:8:in `block in _app_views_posts_edit_html_erb___1014747426383558427_47135107818180'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb___1014747426383558427_47135107818180'
+
+
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2018-12-01 14:11:36 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 236ms (Views: 235.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2018-12-01 14:11:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2018-12-01 14:11:36 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2018-12-01 14:11:36 -0500
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-12-01 14:11:39 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Mt+sYkFJR0N+cP9h7rReNffQE8F+pdU8s+WOE5KcXD7+BQPGc2LOb0TLwNyj4U7RcRRRRXwnD4bT4nNg/EAEQ==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", nil], ["description", nil], ["updated_at", "2018-12-01 19:11:39.348593"], ["id", 1]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 17ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-12-01 14:11:39 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-12-01 14:11:54 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Mt+sYkFJR0N+cP9h7rReNffQE8F+pdU8s+WOE5KcXD7+BQPGc2LOb0TLwNyj4U7RcRRRRXwnD4bT4nNg/EAEQ==", "post"=>{"title"=>"Rails Introduction ", "description"=>"asdfasdf"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-12-01 14:11:54 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-12-01 14:18:57 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Mt+sYkFJR0N+cP9h7rReNffQE8F+pdU8s+WOE5KcXD7+BQPGc2LOb0TLwNyj4U7RcRRRRXwnD4bT4nNg/EAEQ==", "post"=>{"title"=>"upodate", "description"=>"asdfasdfupdate"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `params' for #<Class:0x00007fc619d8b6e8>):
+  app/models/post.rb:2:in `<class:Post>'
+  app/models/post.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.6ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-12-01 14:19:58 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Mt+sYkFJR0N+cP9h7rReNffQE8F+pdU8s+WOE5KcXD7+BQPGc2LOb0TLwNyj4U7RcRRRRXwnD4bT4nNg/EAEQ==", "post"=>{"title"=>"upodate", "description"=>"update"}, "commit"=>"Update Post", "id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+NameError (undefined local variable or method `params' for #<Class:0x00007fc6089da5f0>):
+  app/models/post.rb:2:in `<class:Post>'
+  app/models/post.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:27:in `update'
+
+
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/manny/.rvm/gems/ruby-2.5.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (11.8ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2018-12-01 14:20:05 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Mt+sYkFJR0N+cP9h7rReNffQE8F+pdU8s+WOE5KcXD7+BQPGc2LOb0TLwNyj4U7RcRRRRXwnD4bT4nNg/EAEQ==", "post"=>{"title"=>"upodate", "description"=>"update"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "upodate"], ["description", "update"], ["updated_at", "2018-12-01 19:20:05.425808"], ["id", 1]]
+  [1m[35m (10.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 18ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2018-12-01 14:20:05 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
